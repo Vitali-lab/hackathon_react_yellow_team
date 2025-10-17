@@ -1,16 +1,41 @@
-# React + Vite
+Роуты :
+Главная - "/"
+Избранное - "/favorites"
+Страница участника - "/user:/id"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1: Главная + Navbar + Карточка
 
-Currently, two official plugins are available:
+2: Страница участника + Progress + Badge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3: Избранные + LocalStorage + Breadcrumbs
 
-## React Compiler
+4: Button + общие стили + PropTypes
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+можно еще добавить модалку( для добавления или удаления избранного)
 
-## Expanding the ESLint configuration
+{
+id: 1, // уникальный идентификатор
+firstName: "Иван",
+lastName: "Иванов",
+age: 25,
+about: "Люблю фронтенд, участвовал в разработке UI и интеграции с API.",
+photo: если нет фото , то ссылка на любую картинку
+social: {
+github: "https://github.com/ivanov",
+telegram: ""
+instagram: ""
+},
+role: чем занимался в проекте
+badge: "Team Lead", или пустая строка, если не нужно
+skills: [
+{ name: "React", level: 80, },
+{ name: "Node.js", level: 60, },
+{ name: "CSS", level: 90, }
+],
+portfolio: [
+"https://example.com/project1",
+"https://example.com/project2"
+],
+favorite: false добавление в избранное (localStorage)
+};
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
