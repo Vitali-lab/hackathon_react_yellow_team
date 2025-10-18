@@ -127,6 +127,48 @@ const RoleCard = styled.div`
     }
 `;
 
+// дальше стили для прогресс бара
+
+const SkillsSection = styled.div`
+  margin: 25px 0;
+`;
+
+const SkillItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+`;
+
+const SkillName = styled.span`
+  min-width: 80px;
+  font-weight: 500;
+  color: #333;
+`;
+
+const ProgressBar = styled.div`
+  flex: 1;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+`;
+
+const ProgressFill = styled.div`
+  height: 100%;
+  background: #ffd700;
+  border-radius: 4px;
+  width: ${props => props.value}%;
+  transition: width 0.5s ease-in-out;
+`;
+
+const SkillPercent = styled.span`
+  min-width: 40px;
+  text-align: right;
+  color: #666;
+  font-size: 0.9rem;
+`;
+
 const UserPage = ({ team }) => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -172,7 +214,7 @@ const UserPage = ({ team }) => {
       <Button
         onClick={handleBack}
         title="← Назад"
-        color="#ffd700"
+        color="#fffdf0"
         width="120px"
         bordertype="rounded"
         style={{ marginBottom: '20px' }}
@@ -194,7 +236,7 @@ const UserPage = ({ team }) => {
               <Button
                 onClick={handleAddToFavorites}
                 title="★ B избранное"
-                color="#ffd700"
+                color="#fffdf0"
                 width="200px"
                 bordertype="rounded"
               />
@@ -236,6 +278,19 @@ const UserPage = ({ team }) => {
             </SocialLinks>
           </Section>
         )}
+
+        <SkillsSection>
+          <h2 style={{marginBottom: '15px'}}>Навыки</h2>
+          {user.skills.map(skill => (
+            <SkillItem key={skill.name}>
+              <SkillName>{skill.name}</SkillName>
+              <ProgressBar>
+                <ProgressFill value={skill.level} />
+              </ProgressBar>
+              <SkillPercent>{skill.level}%</SkillPercent>
+            </SkillItem>
+          ))}
+        </SkillsSection>
       </UserCard>
     </PageContainer>
   );
