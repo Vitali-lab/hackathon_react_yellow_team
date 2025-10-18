@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { team } from '../../../team';
-import { Button, Breadcrumbs } from '../../components';
+import {  Breadcrumbs } from '../../components';
+import { MemberCard } from '../../components/Member-card/MemberCard';
 
 const fadeIn = keyframes`
   from {
@@ -29,52 +29,6 @@ const CardsContainer = styled.div`
   gap: 20px;
 `;
 
-const ItemDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  border: 1px solid rgba(172, 172, 172, 0.5);
-  width: 650px;
-  cursor: pointer;
-  background: #fffdf0;
-  margin: 10px;
-  padding: 10px;
-`;
-
-const TopContent = styled.div`
-  display: flex;
-  gap: 20px;
-`;
-
-const ImgWrapper = styled.div`
-  flex-shrink: 0;
-
-  & img {
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
-    padding: 10px;
-  }
-`;
-
-const InfoDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-`;
-
-const AboutDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-`;
-
-const RemoveButtonWrapper = styled.div`
-  width: 100%;
-  margin-top: 10px;
-`;
 
 const EmptyText = styled.div`
   font-size: 24px;
@@ -84,7 +38,6 @@ const EmptyText = styled.div`
 `;
 
 export const Favorites = () => {
-  const navigate = useNavigate();
   const [favoriteMembers, setFavoriteMembers] = useState([]);
 
   useEffect(() => {
@@ -114,33 +67,7 @@ export const Favorites = () => {
       <h1>Избранное</h1>
       <CardsContainer>
         {favoriteMembers.map((member) => (
-          <ItemDiv key={member.id}>
-            <TopContent onClick={() => navigate(`/user/${member.id}`)}>
-              <ImgWrapper>
-                <img src={member.photo} alt={`${member.firstName} ${member.lastName}`} />
-              </ImgWrapper>
-              <InfoDiv>
-                <AboutDiv>
-                  <h2>
-                    {member.firstName} {member.lastName}
-                  </h2>
-                  <p>{member.about}</p>
-                  <p>{member.role}</p>
-                </AboutDiv>
-                <div>
-                  <p>{member.badge}</p>
-                </div>
-              </InfoDiv>
-            </TopContent>
-            <RemoveButtonWrapper>
-              <Button
-                title="Удалить из избранного"
-                color="#ffcccc"
-                width="100%"
-                onClick={() => handleRemoveFavorite(member.id)}
-              />
-            </RemoveButtonWrapper>
-          </ItemDiv>
+          <MemberCard  member={member} removeButton={true} handleRemoveFavorite={handleRemoveFavorite}/>
         ))}
       </CardsContainer>
     </Container>

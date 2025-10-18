@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import { MemberCard } from '../../../components/Member-card/MemberCard';
 
 const fadeIn = keyframes`
     from {
@@ -12,58 +13,15 @@ const fadeIn = keyframes`
     }
 `;
 
-const ItemDiv = styled.div`
-  display: flex;
-  border-radius: 10px;
-  border: 1px solid rgba(172, 172, 172, 0.5);
-  width: 650px;
-  cursor: pointer;
-  background: #fffdf0;
 
-  & img {
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
-    padding: 10px;
-  }
-`;
-const InfoDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px;
-`;
-const AboutDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-`;
 
 const TeamListContainer = ({ className, team }) => {
-  const navigate = useNavigate();
+  
   return (
     <div className={className}>
-      {team.map((item) => {
+      {team.map((member) => {
         return (
-          <ItemDiv key={item.id} onClick={() => navigate(`/user/${item.id}`)}>
-            <div>
-              <img src={item.photo} alt="" />
-            </div>
-            <InfoDiv>
-              <AboutDiv>
-                <h2>
-                  {item.firstName} {item.lastName}
-                </h2>
-                <p>{item.about}</p>
-                <p>{item.role}</p>
-              </AboutDiv>
-              <div>
-                <p>{item.badge}</p>
-              </div>
-            </InfoDiv>
-          </ItemDiv>
+          <MemberCard member={member} key={member.id}/>
         );
       })}
     </div>
