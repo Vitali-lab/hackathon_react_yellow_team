@@ -1,6 +1,5 @@
 
 import styled, { keyframes } from "styled-components";
-import {useNavigate} from "react-router-dom";
 import { MemberCard } from '../../../components/Member-card/MemberCard';
 
 const fadeIn = keyframes`
@@ -22,7 +21,7 @@ const TeamListContainer = ({ className, team }) => {
     <div className={className}>
       {team.map((member) => {
         return (
-          <MemberCard member={member} key={member.id}/>
+          <MemberCard key={member.id} member={member} />
         );
       })}
     </div>

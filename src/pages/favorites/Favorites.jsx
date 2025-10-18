@@ -67,7 +67,7 @@ export const Favorites = () => {
       <h1>Избранное</h1>
       <CardsContainer>
         {favoriteMembers.map((member) => (
-          <MemberCard  member={member} removeButton={true} handleRemoveFavorite={handleRemoveFavorite}/>
+          <MemberCard key={member.id}  member={member} removeButton={true} handleRemoveFavorite={handleRemoveFavorite}/>
         ))}
       </CardsContainer>
     </Container>
