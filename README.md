@@ -14,19 +14,19 @@
 можно еще добавить модалку( для добавления или удаления избранного)
 
 {
-id: 1, // уникальный идентификатор
+id: 1, 
 firstName: "Иван",
 lastName: "Иванов",
 age: 25,
 about: "Люблю фронтенд, участвовал в разработке UI и интеграции с API.",
-photo: если нет фото , то ссылка на любую картинку
+photo: если не фото , то ссылка на любую картинку
 social: {
 github: "https://github.com/ivanov",
 telegram: ""
 instagram: ""
 },
 role: чем занимался в проекте
-badge: "Team Lead", или пустая строка, если не нужно
+badge: "Team Lead",  Team member или что-то типо того
 skills: [
 { name: "React", level: 80, },
 { name: "Node.js", level: 60, },
@@ -35,7 +35,6 @@ skills: [
 portfolio: [
 "https://example.com/project1",
 "https://example.com/project2"
-],
-favorite: false добавление в избранное (localStorage)
+]
 };
 
