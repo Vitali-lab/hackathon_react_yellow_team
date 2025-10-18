@@ -1,4 +1,5 @@
 import { Navbar , Header, Router} from "./components"
+import {team} from '../team.js';
 import styled from "styled-components"
 
 const HeaderDiv = styled.div`
@@ -17,7 +18,7 @@ const AppContainer = ({className}) =>  {
       <Navbar />
       <Header />      
       </HeaderDiv>
-      <Router/>
+      <Router team={team} />
     </div>
   )
 }

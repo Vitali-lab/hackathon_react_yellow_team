@@ -1,5 +1,6 @@
 
 import styled, { keyframes } from "styled-components";
+import {useNavigate} from "react-router-dom";
 
 
 const fadeIn = keyframes`
@@ -46,11 +47,13 @@ gap: 20px;
 `
 
 const TeamListContainer = ({className, team}) => {
+    const navigate = useNavigate();
+
     return(
         <div className={className}>
             {team.map(item => {
                 return (
-                    <ItemDiv key={item.id}>
+                    <ItemDiv key={item.id} onClick={() => navigate(`/user/${item.id}`)}>
                         <div>
                             <img src={item.photo} alt="" />
                         </div>
