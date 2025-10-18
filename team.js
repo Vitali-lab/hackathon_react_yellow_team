@@ -65,7 +65,7 @@ export const team = [
                     "lastName": "Денисов",
                     "age": 28,
                     "about": "Люблю фронтенд, участвовал в разработке UI и интеграции с API.",
-                    "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU9-uXk20n_g6_Qwl8G_Poxjd6PSPD-vumcw&s",
+                    "photo":"https://storage-api.petstory.ru/resize/1000x1000x80/cb/48/7f/cb487f4677a640329e92ac0076004607.jpeg",
                     "social": {
                     "github": "https://github.com/Vitali_lab",
                     "telegram": "",
