@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
+import { team } from '../../../team';
 import styled from 'styled-components';
 import {Button} from '../../components/Button/Button.jsx';
 
@@ -135,6 +136,7 @@ const UserPage = ({ team }) => {
   }
 
   const user = team.find(item => item.id === Number(id));
+  const member = team.find((m) => m.id === Number(id));
 
   if (!user) {
     return (
@@ -157,8 +159,12 @@ const UserPage = ({ team }) => {
   };
 
   const handleAddToFavorites = () => {
-    console.log('Добавляем в избранное пользователя:', user.id);
-    alert(`Пользователь ${user.firstName} ${user.lastName} добавлен в избранное!`);
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (!favorites.includes(member.id)) {
+      favorites.push(member.id);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      alert(`${member.firstName} добавлен в избранное!`);
+    }
   };
 
   return (

@@ -5,8 +5,12 @@ import styled, { keyframes } from "styled-components";
 
 const ButtonDiv = styled.div`
 display: flex;
-justify-content: end;
+width: 100%;
+flex-direction: row;
+justify-content: space-between;
 align-items: center;
+padding-left: 20px;
+font-weight: 600;
 transition: 0.5s;
   
 `
@@ -33,6 +37,9 @@ const NavbarContainer = ({className}) => {
     return(
         <div className={className} >
            <ButtonDiv>
+           <div>
+            <p>Меню</p>
+           </div>
            <i className={isOpen? 'fa fa-caret-up ': 'fa fa-caret-down'} onClick={() => setIsOpen(!isOpen)}></i>
            </ButtonDiv>
           <ul className={isOpen? 'active' : 'unactive'}>
