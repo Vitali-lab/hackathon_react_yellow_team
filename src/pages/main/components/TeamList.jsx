@@ -1,5 +1,18 @@
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+
+const fadeIn = keyframes`
+    from {
+        transform: translateX(-70px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+`;
+
 
 const ItemDiv = styled.div`
 display: flex;
@@ -8,6 +21,7 @@ border: 1px solid rgba(172, 172, 172, 0.5);
 width: 650px;
 cursor: pointer;
 background: #fffdf0;
+
 
 & img{
     width: 300px;
@@ -65,5 +79,6 @@ justify-content: center;
 flex-wrap: wrap;
 gap: 20px;
 padding: 20px;
+animation: ${fadeIn} 1s ease-in-out;
 
 `
