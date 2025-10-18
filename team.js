@@ -22,22 +22,23 @@ export const team = [
   },
   {
     id: 2,
-    firstName: 'Иван',
-    lastName: 'Иванов',
-    age: 28,
-    about: 'Люблю фронтенд, участвовал в разработке UI и интеграции с API.',
+    firstName: 'Святослав',
+    lastName: 'Лазовский',
+    age: 20,
+    about:
+      'Люблю фронтенд, особенно работу с React и созданием современных интерфейсов. Ориентируюсь на практичные решения и хороший пользовательский опыт.',
     photo:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU9-uXk20n_g6_Qwl8G_Poxjd6PSPD-vumcw&s',
+      'https://storage-api.petstory.ru/resize/1000x1000x80/cb/48/7f/cb487f4677a640329e92ac0076004607.jpeg',
     social: {
-      github: 'https://github.com/Vitali_lab',
+      github: 'https://github.com/svyatreen',
       telegram: '',
       instagram: '',
     },
-    role: 'чем занимался в проекте',
-    badge: 'Team Lead',
+    role: 'Реализовал функционал добавления в избранное с сохранением в LocalStorage и Breadcrumbs.',
+    badge: 'Frontend Developer',
     skills: [
-      { name: 'React', level: 80 },
-      { name: 'Node.js', level: 60 },
+      { name: 'React', level: 90 },
+      { name: 'Node.js', level: 80 },
       { name: 'CSS', level: 90 },
     ],
   },
