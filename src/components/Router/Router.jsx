@@ -1,14 +1,13 @@
-import { Route, Routes } from "react-router-dom"
-import { Main } from "../../pages"
+import { Route, Routes } from 'react-router-dom';
+import { Main, User, Favorites } from '../../pages';
 export const Router = () => {
-    return (
-        <>
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="/favorites" element={<div>Избранное</div>} />
-                <Route path="/user/:id" element={<div>Страница участника</div>} />
-            </Routes>
-        
-        </>
-    )
-}
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/user/:id" element={<User />} />
+      </Routes>
+    </>
+  );
+};
