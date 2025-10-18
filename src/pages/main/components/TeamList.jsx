@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+
+import styled, { keyframes } from "styled-components";
+import {useNavigate} from "react-router-dom";
 import { MemberCard } from '../../../components/Member-card/MemberCard';
 
 const fadeIn = keyframes`
