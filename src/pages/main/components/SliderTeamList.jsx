@@ -21,7 +21,7 @@ const SliderItemDiv = styled.div`
   justify-content: start;
   gap: 20px;
   padding: 20px;
-  border: 1px solid rgba(172, 172, 172, 0.5);
+  border: 2px solid #ffd700;
   border-radius: 10px;
   background: #fffdf0;
   animation: ${slide} 0.8s ease-in-out;

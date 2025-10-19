@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { team } from '../../../team';
-import {  Breadcrumbs } from '../../components';
+import { Breadcrumbs } from '../../components';
 import { MemberCard } from '../../components/Member-card/MemberCard';
 
 const fadeIn = keyframes`
@@ -28,7 +28,6 @@ const CardsContainer = styled.div`
   align-items: center;
   gap: 20px;
 `;
-
 
 const EmptyText = styled.div`
   font-size: 24px;
@@ -67,7 +66,12 @@ export const Favorites = () => {
       <h1>Избранное</h1>
       <CardsContainer>
         {favoriteMembers.map((member) => (
-          <MemberCard key={member.id}  member={member} removeButton={true} handleRemoveFavorite={handleRemoveFavorite}/>
+          <MemberCard
+            key={member.id}
+            member={member}
+            removeButton={true}
+            handleRemoveFavorite={handleRemoveFavorite}
+          />
         ))}
       </CardsContainer>
     </Container>
