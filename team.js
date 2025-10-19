@@ -43,23 +43,23 @@ export const team = [
   },
   {
     id: 3,
-    firstName: 'Петр',
-    lastName: 'Петров',
-    age: 28,
-    about: 'Люблю фронтенд, участвовал в разработке UI и интеграции с API.',
+    firstName: 'Сергей',
+    lastName: 'Басков',
+    age: 18,
+    about: 'Фронтенд разработчик с огромной любовью к своей профессии',
     photo:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU9-uXk20n_g6_Qwl8G_Poxjd6PSPD-vumcw&s',
+      'https://animals.pibig.info/uploads/posts/2023-04/1680656122_animals-pibig-info-p-samie-krasivie-sobaki-zhivotnie-pinterest-2.jpg',
     social: {
-      github: 'https://github.com/Vitali_lab',
+      github: 'https://github.com/Hoax123',
       telegram: '',
       instagram: '',
     },
-    role: 'чем занимался в проекте',
-    badge: 'Team Lead',
+    role: 'Реализовал страницу участника, настроил роуты для нее и создал переиспользуемый компонент ProgressBar для визуализации навыков',
+    badge: 'Frontend Developer',
     skills: [
-      { name: 'React', level: 80 },
+      { name: 'React', level: 70 },
       { name: 'Node.js', level: 60 },
-      { name: 'CSS', level: 90 },
+      { name: 'CSS', level: 70 },
     ],
   },
   {

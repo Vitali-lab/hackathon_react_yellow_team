@@ -4,6 +4,7 @@ import { Badge, Modal, Button, Breadcrumbs } from '../../components';
 import { ErrorPage } from '../errorPage/ErrorPage';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import ProgressBar from '../../components/Progress-bar/ProgressBar.jsx';
 
 const PageContainer = styled.div`
   padding: 30px 20px;
@@ -134,22 +135,6 @@ const SkillName = styled.span`
   min-width: 80px;
   font-weight: 500;
   color: #333;
-`;
-
-const ProgressBar = styled.div`
-  flex: 1;
-  height: 8px;
-  background: #f0f0f0;
-  border-radius: 4px;
-  overflow: hidden;
-`;
-
-const ProgressFill = styled.div`
-  height: 100%;
-  background: #ffd700;
-  border-radius: 4px;
-  width: ${(props) => props.value}%;
-  transition: width 0.5s ease-in-out;
 `;
 
 const SkillPercent = styled.span`
@@ -292,9 +277,7 @@ export const UserPage = ({ team }) => {
           {user.skills.map((skill) => (
             <SkillItem key={skill.name}>
               <SkillName>{skill.name}</SkillName>
-              <ProgressBar>
-                <ProgressFill value={skill.level} />
-              </ProgressBar>
+              <ProgressBar value={skill.level} />
               <SkillPercent>{skill.level}%</SkillPercent>
             </SkillItem>
           ))}
