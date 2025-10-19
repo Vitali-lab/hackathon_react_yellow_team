@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import { Badge ,Modal, Button, Breadcrumbs} from '../../components';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
