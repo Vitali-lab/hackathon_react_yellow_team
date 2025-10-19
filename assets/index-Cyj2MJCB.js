@@ -585,4 +585,4 @@ width: 1400px;
 margin: 0 auto;
 
 
-`;_v.createRoot(document.getElementById("root")).render(_.jsx(C.StrictMode,{children:_.jsx(Gg,{children:_.jsx($S,{})})}));
+`;_v.createRoot(document.getElementById("root")).render(_.jsx(C.StrictMode,{children:_.jsx(Gg,{basename:"/hackathon_react_yellow_team/",children:_.jsx($S,{})})}));
