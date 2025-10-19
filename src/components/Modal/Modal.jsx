@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Button } from '../Button/Button';
 import { useState } from 'react';
+import { Button } from '../Button/Button';
+import styled from 'styled-components';
 
 const ModalContainer = ({ className, toFavorite, onCancel, isAddFavorite, resultMessage }) => {
   const [isOpen, setIsOpen] = useState(true);

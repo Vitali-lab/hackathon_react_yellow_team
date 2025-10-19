@@ -1,6 +1,5 @@
-
-import styled, { keyframes } from "styled-components";
-import { MemberCard } from '../../../components/Member-card/MemberCard';
+import { MemberCard } from '../../../components';
+import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
     from {
@@ -13,16 +12,11 @@ const fadeIn = keyframes`
     }
 `;
 
-
-
 const TeamListContainer = ({ className, team }) => {
-  
   return (
     <div className={className}>
       {team.map((member) => {
-        return (
-          <MemberCard key={member.id} member={member} />
-        );
+        return <MemberCard key={member.id} member={member} />;
       })}
     </div>
   );

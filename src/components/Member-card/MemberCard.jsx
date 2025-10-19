@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Button } from '..';
-import { Modal } from '../../components/Modal/Modal';
+import { Button } from '../Button/Button';
+import { Modal } from '../Modal/Modal';
 import styled from 'styled-components';
 
 const InfoDiv = styled.div`
