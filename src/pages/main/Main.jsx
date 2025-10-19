@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { team } from '../../../team';
 import { TeamList, SliderTeamList } from './components';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const IconsDiv = styled.div`
@@ -49,3 +50,7 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 }`;
+
+MainContainer.propTypes = {
+  className: PropTypes.string,
+};

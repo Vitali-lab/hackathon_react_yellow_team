@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const BadgeContainer = ({className , badge}) => {
@@ -28,3 +28,8 @@ export const Badge = styled(BadgeContainer)`
     font-size: 0.8rem;
     }
 `
+
+Badge.propTypes = {
+    className: PropTypes.string,
+    badge: PropTypes.string,
+};
