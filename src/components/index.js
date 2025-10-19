@@ -3,5 +3,6 @@ export * from './Navbar/Navbar.jsx';
 export * from './Header/Header.jsx';
 export * from './Button/Button.jsx';
 export * from './Breadcrumbs/Breadcrumbs.jsx';
+export * from './Badge/Badge.jsx';
 export * from './Modal/Modal.jsx';
 export * from './Member-card/MemberCard.jsx';

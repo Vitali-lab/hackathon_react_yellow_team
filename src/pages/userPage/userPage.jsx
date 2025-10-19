@@ -1,18 +1,20 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { Button, Modal, Breadcrumbs } from '../../components';
+import { useState } from 'react';
+import { Badge ,Modal, Button, Breadcrumbs} from '../../components';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 
 const PageContainer = styled.div`
   padding: 30px 20px;
   max-width: 800px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fff;
+  background: transparent;
 `;
 
 const UserCard = styled.div`
-  background: white;
+  background: #fffdf0;
   border-radius: 10px;
   padding: 25px;
   border: 2px solid #ffd700;
@@ -56,15 +58,7 @@ const UserBasicInfo = styled.div`
     font-size: 1rem;
   }
 
-  & .badge {
-    display: inline-block;
-    background: #ffd700;
-    color: #333;
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-weight: 600;
-    font-size: 0.8rem;
-  }
+  
 `;
 
 const ButtonContainer = styled.div`
@@ -126,8 +120,6 @@ const RoleCard = styled.div`
     line-height: 1.5;
   }
 `;
-
-// дальше стили для прогресс бара
 
 const SkillsSection = styled.div`
   margin: 25px 0;
@@ -260,7 +252,7 @@ export const UserPage = ({ team }) => {
               {user.firstName} {user.lastName}
             </h1>
             <div className="age">Возраст: {user.age} лет</div>
-            {user.badge && <div className="badge">{user.badge}</div>}
+            {user.badge && <Badge badge={user.badge}/>}
 
             <ButtonContainer>
               <Button
@@ -341,4 +333,32 @@ export const UserPage = ({ team }) => {
       )}
     </PageContainer>
   );
+};
+
+export default UserPage;
+
+UserPage.propTypes = {
+  team: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      age: PropTypes.number.isRequired,
+      about: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      badge: PropTypes.string,
+      social: PropTypes.shape({
+        github: PropTypes.string,
+        telegram: PropTypes.string,
+        instagram: PropTypes.string,
+      }),
+      skills: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          level: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
 };

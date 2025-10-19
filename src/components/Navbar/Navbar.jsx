@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ButtonDiv = styled.div`
   display: flex;
@@ -103,3 +104,12 @@ export const Navbar = styled(NavbarContainer)`
     display: none;
   }
 `;
+
+NavbarContainer.propTypes = {
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
+    })
+  ),
+};

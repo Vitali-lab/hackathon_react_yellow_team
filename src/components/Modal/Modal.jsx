@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../Button/Button';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ModalContainer = ({ className, toFavorite, onCancel, isAddFavorite, resultMessage }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -103,3 +104,10 @@ export const Modal = styled(ModalContainer)`
     margin: 0 5px;
   }
 `;
+
+ModalContainer.propTypes = {
+  toFavorite: PropTypes.func,
+  onCancel: PropTypes.func,
+  isAddFavorite: PropTypes.bool,
+  resultMessage: PropTypes.string,
+};

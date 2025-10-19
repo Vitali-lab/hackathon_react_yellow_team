@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import { Badge } from '../../../components';
+import PropTypes from 'prop-types';
 
 const slide = keyframes`
     from {
@@ -58,6 +60,9 @@ const SliderIconDiv = styled.div`
   i {
     font-size: 50px;
     cursor: pointer;
+    &:active {
+      transform: scale(0.9);
+    }
   }
 `;
 
@@ -111,7 +116,7 @@ const SliderTeamListContainer = ({ className, team }) => {
             <p>{team[count].role}</p>
           </div>
           <div>
-            <p>{team[count].badge}</p>
+            <Badge badge={team[count].badge} />
           </div>
         </SliderInfoDiv>
       </SliderItemDiv>
@@ -132,3 +137,17 @@ export const SliderTeamList = styled(SliderTeamListContainer)`
   gap: 20px;
   padding: 20px;
 `;
+
+SliderTeamListContainer.propTypes = {
+  team: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      about: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      badge: PropTypes.string,
+    })
+  ).isRequired,
+};

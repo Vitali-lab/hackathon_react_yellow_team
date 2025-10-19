@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const SectionAboutDiv = styled.section`
   width: 520px;
@@ -26,3 +27,7 @@ export const Header = styled(HeaderContainer)`
   justify-content: center;
   align-items: center;
 `;
+
+HeaderContainer.propTypes = {
+  children: PropTypes.node,
+};

@@ -1,5 +1,7 @@
+
+import styled, { keyframes } from "styled-components";
 import { MemberCard } from '../../../components';
-import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const fadeIn = keyframes`
     from {
@@ -31,3 +33,17 @@ export const TeamList = styled(TeamListContainer)`
   padding: 20px;
   animation: ${fadeIn} 1s ease-in-out;
 `;
+
+TeamListContainer.propTypes = {
+  team: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      about: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      badge: PropTypes.string,
+    })
+  ).isRequired,
+};
