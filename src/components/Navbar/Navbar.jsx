@@ -62,6 +62,7 @@ align-items: end;
 height:35px;
 background: #fffdf0;
 border-radius: 10px;
+border: 2px solid #ffd700;
 color: black;
 box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 & ul {
@@ -75,6 +76,7 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         padding: 10px 20px;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        border: 2px solid #ffd700;
     }
   & i{
   font-size: 35px;

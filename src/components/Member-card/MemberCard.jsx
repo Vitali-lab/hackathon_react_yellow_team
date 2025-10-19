@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Button } from '..';
-import { Modal } from '../../components/Modal/Modal';
+import { Modal , Badge, Button } from '../../components';
 import styled from 'styled-components';
 
 const InfoDiv = styled.div`
@@ -78,7 +77,7 @@ const MemberCardContainer = ({ className, member, removeButton, handleRemoveFavo
             <p>{member.role}</p>
           </AboutDiv>
           <div>
-            <p>{member.badge}</p>
+            <Badge badge={member.badge} />
           </div>
         </InfoDiv>
       </TopContent>

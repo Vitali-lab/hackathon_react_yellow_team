@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import { Badge } from '../../../components';
 
 const slide = keyframes`
     from {
@@ -58,6 +59,9 @@ const SliderIconDiv = styled.div`
   i {
     font-size: 50px;
     cursor: pointer;
+    &:active {
+      transform: scale(0.9);
+    }
   }
 `;
 
@@ -111,7 +115,7 @@ const SliderTeamListContainer = ({ className, team }) => {
             <p>{team[count].role}</p>
           </div>
           <div>
-            <p>{team[count].badge}</p>
+            <Badge badge={team[count].badge} />
           </div>
         </SliderInfoDiv>
       </SliderItemDiv>
