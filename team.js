@@ -12,12 +12,12 @@ export const team = [
       telegram: '',
       instagram: '',
     },
-    role: 'Инициализировал проект, реализовал Navbar, главную страницу, сетку и список карточек.',
+    role: 'Инициализировал проект, реализовал Navbar, главную страницу, сетку участников, слайдер участников.',
     badge: 'Team Lead',
     skills: [
-      { name: 'React', level: 80 },
+      { name: 'React', level: 90 },
       { name: 'Node.js', level: 60 },
-      { name: 'CSS', level: 90 },
+      { name: 'CSS', level: 80 },
     ],
   },
   {

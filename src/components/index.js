@@ -6,3 +6,4 @@ export * from './Breadcrumbs/Breadcrumbs.jsx';
 export * from './Badge/Badge.jsx';
 export * from './Modal/Modal.jsx';
 export * from './Member-card/MemberCard.jsx';
+export * from './Progress-bar/ProgressBar.jsx';

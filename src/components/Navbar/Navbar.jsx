@@ -12,6 +12,8 @@ const ButtonDiv = styled.div`
   padding-left: 20px;
   font-weight: 600;
   transition: 0.5s;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
 `;
 
 const open = keyframes`
@@ -77,6 +79,7 @@ export const Navbar = styled(NavbarContainer)`
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 2px solid #ffd700;
   }
   & i {
     font-size: 35px;

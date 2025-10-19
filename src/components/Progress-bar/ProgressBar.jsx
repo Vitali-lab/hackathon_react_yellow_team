@@ -15,7 +15,7 @@ const ProgressFill = styled.div`
   transition: width 0.5s ease-in-out;
 `;
 
-const ProgressBar = ({ value }) => {
+export const ProgressBar = ({ value }) => {
   return (
     <ProgressBarContainer>
       <ProgressFill style={{ width: `${value}%` }} />
@@ -23,4 +23,3 @@ const ProgressBar = ({ value }) => {
   );
 };
 
-export default ProgressBar;

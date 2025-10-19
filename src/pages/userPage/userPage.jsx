@@ -1,10 +1,9 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Badge, Modal, Button, Breadcrumbs } from '../../components';
+import { Badge, Modal, Button, Breadcrumbs ,ProgressBar } from '../../components';
 import { ErrorPage } from '../errorPage/ErrorPage';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ProgressBar from '../../components/Progress-bar/ProgressBar.jsx';
 
 const PageContainer = styled.div`
   padding: 30px 20px;
