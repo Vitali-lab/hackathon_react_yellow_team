@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const CrumbsWrapper = styled.div`
   display: flex;
@@ -43,4 +44,13 @@ export const Breadcrumbs = ({ crumbs }) => {
       ))}
     </CrumbsWrapper>
   );
+};
+
+Breadcrumbs.propTypes = {
+  crumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      path: PropTypes.string,
+    })
+  ).isRequired,
 };

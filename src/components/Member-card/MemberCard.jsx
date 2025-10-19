@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '..';
 import { Modal } from '../../components/Modal/Modal';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const InfoDiv = styled.div`
   display: flex;
@@ -130,3 +131,16 @@ export const MemberCard = styled(MemberCardContainer)`
     padding: 10px;
   }
 `;
+
+MemberCardContainer.propTypes = {
+  member: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
+    about: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    badge: PropTypes.string,
+  }).isRequired,
+  handleRemoveFavorite: PropTypes.func.isRequired,
+};
