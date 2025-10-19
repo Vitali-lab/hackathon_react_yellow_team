@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Badge, Modal, Button, Breadcrumbs ,ProgressBar } from '../../components';
+import { Badge, Modal, Button, Breadcrumbs, ProgressBar } from '../../components';
 import { ErrorPage } from '../errorPage/ErrorPage';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -183,8 +183,6 @@ export const UserPage = ({ team }) => {
       localStorage.setItem('favorites', JSON.stringify(favorites));
       setResultMessage(`${user.firstName} добавлен в избранное!`);
       setIsFavorite(true);
-    } else {
-      setResultMessage(`${user.firstName} уже в избранном!`);
     }
     setIsModalOpen(false);
     setIsResultModalOpen(true);
