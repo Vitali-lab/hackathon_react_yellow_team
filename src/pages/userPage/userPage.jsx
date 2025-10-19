@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { Badge ,Modal, Button} from '../../components';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 
 const PageContainer = styled.div`
@@ -120,8 +121,6 @@ const RoleCard = styled.div`
   }
 `;
 
-// дальше стили для прогресс бара
-
 const SkillsSection = styled.div`
   margin: 25px 0;
 `;
@@ -151,7 +150,7 @@ const ProgressFill = styled.div`
   height: 100%;
   background: #ffd700;
   border-radius: 4px;
-  width: ${props => props.value}%;
+  width: ${(props) => props.value}%;
   transition: width 0.5s ease-in-out;
 `;
 
@@ -293,8 +292,8 @@ const UserPage = ({ team }) => {
         )}
 
         <SkillsSection>
-          <h2 style={{marginBottom: '15px'}}>Навыки</h2>
-          {user.skills.map(skill => (
+          <h2 style={{ marginBottom: '15px' }}>Навыки</h2>
+          {user.skills.map((skill) => (
             <SkillItem key={skill.name}>
               <SkillName>{skill.name}</SkillName>
               <ProgressBar>
@@ -326,3 +325,29 @@ const UserPage = ({ team }) => {
 };
 
 export default UserPage;
+
+UserPage.propTypes = {
+  team: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      age: PropTypes.number.isRequired,
+      about: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      badge: PropTypes.string,
+      social: PropTypes.shape({
+        github: PropTypes.string,
+        telegram: PropTypes.string,
+        instagram: PropTypes.string,
+      }),
+      skills: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          level: PropTypes.number.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
+};
