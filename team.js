@@ -77,7 +77,7 @@ export const team = [
       instagram: '',
     },
     role: 'Реализовал компонент Button, модальные окна добавления в избранное, удаления из избранного, типизировал приложение.',
-    badge: '',
+    badge: 'Frontend Developer',
     skills: [
       { name: 'React', level: 80 },
       { name: 'Node.js', level: 70 },

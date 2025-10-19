@@ -15,7 +15,7 @@ const IconsDiv = styled.div`
   i {
     font-size: 30px;
     padding: 5px;
-    border: 1px solid rgba(172, 172, 172, 0.5);
+    border: 1px solid #ffd700;
   }
 `;
 
