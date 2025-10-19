@@ -67,8 +67,7 @@ export const team = [
     firstName: 'Евгений',
     lastName: 'Сыч',
     age: 34,
-    about:
-      'Специализируюсь на frontend-разработке: создание интерфейсов и их взаимодействие с серверной частью через API.',
+    about: 'frontend - моя любовь!',
     photo:
       'https://dogtowndogtraining.com/wp-content/uploads/2012/06/300x300-061-e1340955308953.jpg',
     social: {
