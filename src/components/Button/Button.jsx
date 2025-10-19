@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ButtonContainer = ({
   className,
@@ -75,3 +76,12 @@ export const Button = styled(ButtonContainer)`
     opacity: 0.6;
   `}
 `;
+
+ButtonContainer.propTypes = {
+  color: PropTypes.string,
+  onClick: PropTypes.func,
+  title: PropTypes.string,
+  disabled: PropTypes.bool,
+  bordertype: PropTypes.oneOf(['square', 'rounded']),
+  width: PropTypes.string,
+};
