@@ -4,6 +4,7 @@ import { Modal , Badge, Button } from '../../components';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+
 const InfoDiv = styled.div`
   display: flex;
   flex-direction: column;

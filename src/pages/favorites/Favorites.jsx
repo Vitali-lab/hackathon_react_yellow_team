@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
 import { team } from '../../../team';
-import { Breadcrumbs } from '../../components';
-import { MemberCard } from '../../components/Member-card/MemberCard';
+import { Breadcrumbs, MemberCard } from '../../components';
+import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
   from {

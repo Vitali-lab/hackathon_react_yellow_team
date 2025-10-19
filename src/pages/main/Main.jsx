@@ -1,8 +1,7 @@
-import { team } from '../../../team';
-import styled from 'styled-components';
-import { TeamList } from './components/TeamList';
 import { useState } from 'react';
-import { SliderTeamList } from './components/SliderTeamList.jsx';
+import { team } from '../../../team';
+import { TeamList, SliderTeamList } from './components';
+import styled from 'styled-components';
 
 const IconsDiv = styled.div`
   width: 100%;

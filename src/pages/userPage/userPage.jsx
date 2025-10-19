@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { Badge ,Modal, Button} from '../../components';
+import { Badge ,Modal, Button, Breadcrumbs} from '../../components';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -161,19 +161,19 @@ const SkillPercent = styled.span`
   font-size: 0.9rem;
 `;
 
-const UserPage = ({ team }) => {
+export const UserPage = ({ team }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isResultModalOpen, setIsResultModalOpen] = useState(false);
   const [resultMessage, setResultMessage] = useState('');
+  const [isFavorite, setIsFavorite] = useState(false);
 
   if (!team) {
     return <PageContainer>Данные загружаются...</PageContainer>;
   }
 
   const user = team.find((item) => item.id === Number(id));
-  const member = team.find((m) => m.id === Number(id));
 
   if (!user) {
     return (
@@ -192,6 +192,12 @@ const UserPage = ({ team }) => {
       </PageContainer>
     );
   }
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (favorites.includes(user.id)) {
+      setIsFavorite(true);
+    }
+  }, [user.id]);
 
   const handleBack = () => {
     navigate(-1);
@@ -203,12 +209,13 @@ const UserPage = ({ team }) => {
 
   const handleAddToFavorites = () => {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    if (!favorites.includes(member.id)) {
-      favorites.push(member.id);
+    if (!favorites.includes(user.id)) {
+      favorites.push(user.id);
       localStorage.setItem('favorites', JSON.stringify(favorites));
-      setResultMessage(`${member.firstName} добавлен в избранное!`);
+      setResultMessage(`${user.firstName} добавлен в избранное!`);
+      setIsFavorite(true);
     } else {
-      setResultMessage(`${member.firstName} уже в избранном!`);
+      setResultMessage(`${user.firstName} уже в избранном!`);
     }
     setIsModalOpen(false);
     setIsResultModalOpen(true);
@@ -224,6 +231,9 @@ const UserPage = ({ team }) => {
 
   return (
     <PageContainer>
+      <Breadcrumbs
+        crumbs={[{ title: 'Главная', path: '/' }, { title: `${user.firstName} ${user.lastName}` }]}
+      />
       <Button
         onClick={handleBack}
         title="← Назад"
@@ -251,6 +261,7 @@ const UserPage = ({ team }) => {
                 color="#fffdf0"
                 width="200px"
                 bordertype="rounded"
+                disabled={isFavorite}
               />
             </ButtonContainer>
           </UserBasicInfo>
