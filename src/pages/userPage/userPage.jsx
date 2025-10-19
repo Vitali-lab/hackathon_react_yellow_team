@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState , useEffect } from 'react';
-import { Badge ,Modal, Button, Breadcrumbs} from '../../components';
+import { useState, useEffect } from 'react';
+import { Badge, Modal, Button, Breadcrumbs } from '../../components';
+import { ErrorPage } from '../errorPage/ErrorPage';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
 
 const PageContainer = styled.div`
   padding: 30px 20px;
@@ -57,8 +57,6 @@ const UserBasicInfo = styled.div`
     margin-bottom: 8px;
     font-size: 1rem;
   }
-
-  
 `;
 
 const ButtonContainer = styled.div`
@@ -176,22 +174,9 @@ export const UserPage = ({ team }) => {
   const user = team.find((item) => item.id === Number(id));
 
   if (!user) {
-    return (
-      <PageContainer>
-        <div
-          style={{
-            background: 'white',
-            padding: '30px',
-            borderRadius: '10px',
-            textAlign: 'center',
-            border: '2px solid #ffd700',
-          }}
-        >
-          Пользователь не найден
-        </div>
-      </PageContainer>
-    );
+    return <ErrorPage />;
   }
+
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (favorites.includes(user.id)) {
@@ -252,7 +237,7 @@ export const UserPage = ({ team }) => {
               {user.firstName} {user.lastName}
             </h1>
             <div className="age">Возраст: {user.age} лет</div>
-            {user.badge && <Badge badge={user.badge}/>}
+            {user.badge && <Badge badge={user.badge} />}
 
             <ButtonContainer>
               <Button
