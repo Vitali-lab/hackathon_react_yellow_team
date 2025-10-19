@@ -1,5 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-import { MemberCard } from '../../../components/Member-card/MemberCard';
+
+import styled, { keyframes } from "styled-components";
+import { MemberCard } from '../../../components';
 import PropTypes from 'prop-types';
 
 const fadeIn = keyframes`

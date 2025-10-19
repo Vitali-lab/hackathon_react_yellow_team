@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Button } from '..';
-import { Modal } from '../../components/Modal/Modal';
+import { Modal , Badge, Button } from '../../components';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -79,7 +78,7 @@ const MemberCardContainer = ({ className, member, removeButton, handleRemoveFavo
             <p>{member.role}</p>
           </AboutDiv>
           <div>
-            <p>{member.badge}</p>
+            <Badge badge={member.badge} />
           </div>
         </InfoDiv>
       </TopContent>

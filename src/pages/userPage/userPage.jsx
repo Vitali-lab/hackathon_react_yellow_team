@@ -1,21 +1,20 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { team } from '../../../team';
-import { Button } from '../../components/Button/Button.jsx';
-import { Modal } from '../../components/Modal/Modal.jsx';
+import { Badge ,Modal, Button} from '../../components';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
 
 const PageContainer = styled.div`
   padding: 30px 20px;
   max-width: 800px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fff;
+  background: transparent;
 `;
 
 const UserCard = styled.div`
-  background: white;
+  background: #fffdf0;
   border-radius: 10px;
   padding: 25px;
   border: 2px solid #ffd700;
@@ -59,15 +58,7 @@ const UserBasicInfo = styled.div`
     font-size: 1rem;
   }
 
-  & .badge {
-    display: inline-block;
-    background: #ffd700;
-    color: #333;
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-weight: 600;
-    font-size: 0.8rem;
-  }
+  
 `;
 
 const ButtonContainer = styled.div`
@@ -251,7 +242,7 @@ const UserPage = ({ team }) => {
               {user.firstName} {user.lastName}
             </h1>
             <div className="age">Возраст: {user.age} лет</div>
-            {user.badge && <div className="badge">{user.badge}</div>}
+            {user.badge && <Badge badge={user.badge}/>}
 
             <ButtonContainer>
               <Button
